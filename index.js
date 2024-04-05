@@ -1,3 +1,4 @@
+//1233333
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
@@ -13,14 +14,52 @@ if (!fs.existsSync(filesDirectory)) {
     fs.mkdirSync(filesDirectory);
 }
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send(`
-    <h3>To Create File</h1>
-    <a target="_blank" href="https://nodejs-filesystem-jdpe.onrender.com/createFile">https://nodejs-filesystem-jdpe.onrender.com/createFile</a>
-    <h3>To Retrieve Files</h1>
-    <a target="_blank" href="https://nodejs-filesystem-jdpe.onrender.com/retrieveFiles">https://nodejs-filesystem-jdpe.onrender.com/retrieveFiles</a>
-    ` )
+    <style>
+   
+       
+   
+    
+        .button {
+            background-color: #008CBA; /* Blue */
+            border: 4px solid #FF0000; /* Red border */
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            outline: none; /* Remove the default outline */
+            transition: background-color 0.3s, border-color 0.3s; /* Transition duration */
+        }
+
+        .button:hover {
+            background-color: #7CFC00; /* Light green on hover */
+            border-color: #7CFC00; /* Light green border on hover */
+        }
+
+        .button:active {
+            background-color: #004960; /* Darker Blue when clicked */
+            border-color: #004960; /* Darker Blue border when clicked */
+            box-shadow: 0 5px #666; /* Add a shadow effect */
+            transform: translateY(4px); /* Move button down */
+        }
+        .response-message {
+            font-size: 18px; /* Change font size here */
+        }
+    </style>
+
+    <h2>To Create File</h2>
+    <button class="button" onclick="window.open('https://filesystem-xr1r.onrender.com/createFile', '_blank')">Create File</button>
+    <h2>To Retrieve Files</h2>
+    <button class="button" onclick="window.open('https://filesystem-xr1r.onrender.com/retrieveFiles', '_blank')">Retrieve Files</button>
+   
+    `)
 })
+
 
 app.get('/createFile', (req, res) => {
     const currentDate = new Date();
@@ -33,6 +72,7 @@ app.get('/createFile', (req, res) => {
             console.error(err);
             res.status(500).send('Error creating file: ' + err.message);
         } else {
+
             res.status(200).send('File created successfully');
         }
     });
