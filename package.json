@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-filesystem",
+  "version": "1.0.0",
+  "description": "nodejs file system",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fs"
+  ],
+  "author": "manojconcept",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "express": "^4.19.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manojconcept/nodeJs-fileSystem.git"
+  }
+}
